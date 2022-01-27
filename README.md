@@ -1,2 +1,1 @@
-# HMS
-Hostel Management System
+# Hostel_Management_System

@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: .7s;
+}
+
+body {
+    background-color: #000;
+    color: #FFF;
+    width: 100%;
+}
+
+.nav-div, .nav-bar {
+    top: 0;
+    background-color: #111;
+    border: 1px solid black;
+    position: fixed;
+    width: 100%;
+}
+
+ul {
+    margin: 2rem;
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin: 0 2rem;
+    text-align: center;
+    background-color: #000;
+    padding-bottom: 2.1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.links {
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.links:hover {
+    color: #66F;
+}
+
+.heading {
+    margin-top: 12rem;
+    text-align: center;
+}
+
+.main-div {
+    margin: 3rem auto;
+    justify-content: center;
+    align-content: center;
+    max-width: 1024px;
+    width: 100%;
+}
+
+h1.title {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    color: #6D6;
+}
+
+.welcome {
+    text-transform: uppercase !important;
+    color: #66F !important;
+    font-size: 2.7rem !important;
+}
+
+form {
+    margin: 0 auto;
+}
+
+button {
+    border-radius: .2rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+form[name="login"] > button[type="button"] {
+    border: 1px solid #66F;
+    background-color: transparent;
+    color: #66F;
+    padding: 2.2rem 4rem;
+    margin: 0 0;
+    box-shadow: 0 2px 20px #66F;
+    /* border-right: none; */
+    /* border-left: none; */
+}
+
+form[name="register"] > button[type="submit"] {
+    border: 1px solid #6A6;
+    background-color: transparent;
+    color: #6D6;
+    padding: 2.2rem 4rem;
+    margin: 0 0;
+    box-shadow: 0 2px 20px #6D6;
+    /* border-style: dashed; */
+}
+
+
+form[name="login"] > button[type="button"]:hover {
+    cursor: pointer;
+    background: #66F;
+    color: #111;
+    border: none;
+    box-shadow: 0 2px 35px #66F;
+}
+
+form[name="register"] > button[type="submit"]:hover {
+    cursor: pointer;
+    background: #6A6;
+    color: #000;
+    border-style: none;
+    box-shadow: 0 2px 35px #6D6;
+}
+
+.inner-main {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 2, .7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.bg-modal-reg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 2, .7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+.modal-content {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(10, 10, 30, .9);
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content-reg {
+    width: 500px;
+    height: 800px;
+    background-color: rgba(10, 10, 30, .9);
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+}
+
+label {
+    display: block;
+    /* text-align: center; */
+    margin: 1rem 0 .5rem 0;
+    color: #FFF;
+}
+
+input {
+    background-color: #000;
+    font-size: 15px;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    /* border: none; */
+    border-color: #66F;
+    color: #6f6;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    padding: .5rem .7rem;
+    box-shadow: 0 0 10px #66F;
+}
+
+input:hover {
+    border-color: #66F;
+}
+
+button[name="submit"] {
+    margin: 1rem auto;
+    max-width: 320px;
+    width: 100%;
+    border: 1px solid #6F6;
+    border-radius: 24px;
+    background-color: transparent;
+    color: #6F6;
+    height: 2.5rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 10px #6D6;
+}
+
+div.heading > img[alt="user"] {
+    width: 100px;
+    height: 100px;
+}
+
+button[name="submit"]:hover {
+    background-color: #6F6;
+    color: #000 !important;
+}
+
+.close {
+    /* background-color: #000; */
+    /* border-radius: 50%; */
+    width: 2rem;
+    height: 2rem;
+    margin-top: .5rem;
+    /* text-align: center; */
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    font-weight: 600;
+    color: red;
+    cursor: pointer;
+}
+
+img[alt="user"] {
+    margin: 2rem 0 1rem 0;
+}
+
+h4 {
+    margin-bottom: .7rem;
+    margin-top: .5rem;
+}
+
+.admin {
+    color: #66F;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 1rem 0;
+    padding: .5rem;
+    border: 1px solid #66F;
+    border-radius: .2rem;
+    box-shadow: 0 0 10px #66F;
+}
+
+.admin:hover {
+    background-color: #66F;
+    border-radius: .2rem;
+    color: #FFF;
+}
+
+button.on {
+    cursor: pointer !important;
+    text-align: center;
+}
+
+input[value="on"],input[value="off"] {
+    border-style: none;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+img[alt="user"] {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css" type="text/css">
+    <script src="/js/javascript.js" type="javascript"></script>
+
+    <title>HMS | Home Page</title>
+</head>
+
+<body>
+
+    <div class="nav-div">
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#" class="links" id="links">Sign In</a></li>
+                <li><a href="#" class="links" id="links">Sign Up</a></li>
+                <li><a href="#" class="links" id="links">About Us</a></li>
+                <li><a href="#" class="links" id="links">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="heading">
+        <img src="./Assets/hotel-hostel-svgrepo-com.svg" alt="user">
+        <h1 class="title welcome">Welcome</h1>
+        <h1 class="title">Hostel Management System</h1>
+    </div>
+    <div class="main-div">
+        <div class="main-body">
+            <main class="main">
+                <div class="inner-main">
+                    <form action="" method="post" name="login">
+                        <button type="button" id="buttonLogin" />Sign In Now</button>
+                    </form>
+                    <form action="./register.html" method="post" name="register">
+                        <button type="submit" id="buttonRegister" />Register Now</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close" id="close">+</div>
+            <form action="./db_conn.php" method="post">
+                <img src="./Assets/hotel-hostel-svgrepo-com.svg" alt="user">
+                <label for="Username">Username/Email: </label>
+                <input type="text" name="username" placeholder="Username/Email" required/>
+
+                <label for="Password">Password: </label>
+                <input type="password" name="password" placeholder="password" required/>
+
+                <button type="submit" name="submit">Submit</button>
+
+                <h4>Are you a staff?</h4> <a href="./Admin/login.html" class="admin">login here</a>
+            </form>
+        </div>
+    </div>
+    
+    <!-- <button class="on off">
+        <input type="radio" name="on/off" value="on" checked>
+        <input type="radio" name="on/off" value="off">
+    </button> -->
+
+    <script>
+        document.getElementById('buttonLogin').addEventListener('click', function () {
+            document.querySelector('.bg-modal').style.display = 'flex';
+        });
+
+        document.getElementById('close').addEventListener('click', function() {
+            document.querySelector('.bg-modal').style.display = 'none'; 
+        });
+    </script>
+</body>
+
+</html>

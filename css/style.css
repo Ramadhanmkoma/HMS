@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: .7s;
+}
+
+body, html {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-bar {
+    display: inline;
+    position: fixed;
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 0px 1px 5px #112;
+}
+
+.head {
+    display: block;
+    justify-content: center;
+    width: 100%;
+}
+
+.head > header {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.head > header > img {
+    margin-top: 6rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+section.section#section > div {
+    margin: 1rem 1rem;
+}
+
+.nav-bar > .ul-link {
+    display: inline-block;
+    width: 100%;
+    margin: 1.5rem;
+    list-style-type: none;
+}
+
+.nav-bar > .ul-link > .li-link {
+    display: inline;
+    margin: 0 1.5rem;
+}
+
+.nav-bar > .ul-link > .li-link > a {
+    text-decoration: none;
+    color: #112;
+    font-weight: 600;
+}
+
+.nav-bar > .ul-link > .li-link > a:hover {
+    color: royalblue;
+}
+
+section.section#section {
+    display: grid;
+    /* grid: auto-flow min-content / repeat(3, 1fr); */
+    grid: auto-flow 16em / repeat(auto-fill, minmax(20rem 1fr));
+}
+
+div#box {
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    background-color: #112;
+    border-style: none;
+    border-radius: .4rem;
+    box-shadow: 10px 5px 10px #112;
+    padding: 4rem 0;
+}
+
+div#box > p {
+    color: #EEE;
+    margin: 1rem auto;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+div#box > button {
+    background-color: transparent;
+    border-radius: .4rem;
+    border-color: #6ff;
+    box-shadow: 0px 1px 12px #6ff;
+    color: #EEE;
+    width: 5rem;
+    height: 2rem;
+}
+
+div#box > button:hover {
+    background-color: #6ff;
+    font-weight: 600;
+    color: #112;
+}
+
+div.box1 {
+    grid-column: 1/2;
+}
+
+div.box2 {
+    grid-column: 2/3;
+}
+
+div.box3 {
+    grid-column: 3/4;
+}
+
+@media (max-width: 1200px) {
+    
+    div.box1 {
+        grid-area: 1/1/2/2;
+    }
+
+    div.box2 {
+        grid-area: 1/2/2/3;
+    }
+
+    div.box3 {
+        grid-area: 2/1/3/2;
+    }
+}
+
+@media (max-width: 760px) {
+    div.box1 {
+        grid-area: 1/1/2/4;
+    }
+
+    div.box2 {
+        grid-area: 2/1/3/4;
+    }
+
+    div.box3 {
+        grid-area: 3/1/4/4;
+    }
+}
+
+main {
+    /* display: grid; */
+    /* grid: auto-flow 16em / repeat(3, 1fr); */
+    background: linear-gradient(#123 3);
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+main > .bg-modal {
+    /* display: none; */
+    width: 1024px;
+    /* border: 1px solid black; */
+    margin: 1rem auto;
+    border-radius: .4rem;
+}
+
+main > .bg-modal > .modal-content {
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+    max-width: 400px;
+    width: 100%;
+    border-radius: .4rem;
+    margin: 0 auto;
+    display: block;
+}
+
+main > .bg-modal > .modal-content > form {
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 2rem auto;
+}
+
+main > .bg-modal > .modal-content > form > label {
+    display: block;
+    text-align: left;
+    align-items: center;
+}
+
+.modal-content > form > button {
+    width: 25.8rem;
+    height: 2.5rem;
+    margin: .5rem 0;
+    font-weight: 600;
+    border-radius: .2rem;
+    border: 1px solid royalblue;
+    box-shadow: 0 0 12px royalblue;
+    justify-content: right;
+}
+
+.modal-content > form >button:hover {
+    background-color: royalblue;
+}
+
+.modal-content > form > label > input[type="text"], 
+input[type="date"] {
+    justify-content: right;
+    margin: .5rem auto;
+    border-color: #6F6;
+    box-shadow: 0 0 10px #6F6;
+    width: 24.5rem;
+    height: 2.5rem;
+    padding: 0 .5rem;
+}
+
+label > textarea {
+    box-shadow: 0 0 12px #6F6;
+}
+
+form > label > select {
+    justify-content: right;
+    margin: .5rem auto;
+    border-color: #6F6;
+    box-shadow: 0 0 10px #6F6;
+    width: 25.8rem;
+    height: 2.5rem;
+    padding: 0 .5rem;
+}
+
+#form1 {
+    display: flex;
+}
+
+#form2 {
+    display: none;
+}
+
+#form3 {
+    display: none;
+}
+
