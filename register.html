@@ -32,7 +32,7 @@
     </div>
     <div class="login-div">
       <center>
-        <form action="./conn.php" method="post">
+        <form action="#" method="post">
           <label for="Firstname">First Name: </label>
           <input type="text" id="name" class="UserInfo" placeholder="Enter your First name here..." name="firstName" required />
 
@@ -55,7 +55,7 @@
           <input type="password" id="re-pass" class="password" name="re_type_password" placeholder="Re-type password..." required />
 
           <label for="Phone">Phone number: </label>
-          <input type="number" id="phone" class="UserInfo" placeholder="eg: 255754XXXXXX" name="number" required />
+          <input type="tel" id="phone" class="UserInfo" placeholder="eg: 255754XXXXXX" name="number" maxlength="12" minlength="12" required />
 
           <label for="Male" id="gender" name="gender">Male:
             <input type="radio" id="name" name="gender" value="m" checked />

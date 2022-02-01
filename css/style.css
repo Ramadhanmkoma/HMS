@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     transition: .7s;
+    scroll-behavior: smooth;
 }
 
 body, html {
@@ -10,7 +11,7 @@ body, html {
 }
 
 .nav-bar {
-    display: inline;
+    display: flex;
     position: fixed;
     width: 100%;
     background-color: #FFF;
@@ -63,9 +64,153 @@ section.section#section > div {
 
 section.section#section {
     display: grid;
-    /* grid: auto-flow min-content / repeat(3, 1fr); */
     grid: auto-flow 16em / repeat(auto-fill, minmax(20rem 1fr));
 }
+
+.sign-out {
+  margin: 1rem 2em;
+  width: 6rem;
+  height: 2.4rem;
+  border-radius: .4em;
+  border: 1px solid #F66;
+  box-shadow: 0 0 5px #F66;
+}
+
+.sign-out:hover {
+  background-color: #F66;
+  color: #F66;
+}
+
+.sign-out > a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #F66;
+}
+
+.sign-out > a:hover {
+  color: #FFF;
+}
+
+/*About.php*/
+
+  #submit-msg {
+    display: block;
+    border-radius: .3rem;
+    width: 40.5rem;
+    height: 2.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem auto 1rem 11rem;
+    border-style: none;
+    font-weight: 600;
+    background-color: #59F;
+  }
+
+  #clear-msg {
+    display: block;
+    border-radius: .3rem;
+    box-shadow: 0 0 20px #F59;
+    border: 1px solid #F59 !important;
+    width: 40.5rem;
+    height: 2.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem auto 2.5rem 11rem;
+    border-style: none;
+    font-weight: 600;
+  }
+
+  #submit-msg:hover {
+    box-shadow: 0 0 20px #59F;
+    height: 2.9rem;
+  }
+
+  #clear-msg:hover {
+    background-color: #F59;
+    height: 2.9rem;
+  }
+
+  .about-p {
+    color: #112 !important;
+    text-align: justify;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .form-Contact > fieldset {
+    display: block;
+    max-width: 1000px;
+    width: 100%;
+    margin: .5rem auto;
+    padding-top: 2rem;
+    justify-content: justify;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(235, 240, 240, .8);
+    border-radius: .4rem;
+    border: 1px solid #112;
+  }
+
+  .form-Contact > fieldset > legend {
+    color: wheat;
+    cursor: pointer;
+    margin: 0 .1em;
+    font-weight: 600;
+    box-shadow: 0 2px 15px #112;
+    background-color: #211;
+    padding: .5rem 1rem;
+    border-radius: 24px;
+  }
+
+.form-Contact > fieldset > legend:hover {
+    color: #F66;
+    box-shadow: 0 2px 15px #F66;
+}
+
+  .Contact-sec > h1 {
+    text-align: center;
+    color: royalblue;
+  }
+
+  .form-Contact > fieldset > label {
+    display: block;
+    text-align: left;
+    margin: 0 0 0 5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: monospace;
+  }
+
+  .form-Contact > fieldset > input, textarea {
+    display: block;
+    padding-left: .5rem;
+    border-radius: .2rem;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #112;
+    border-style: solid;
+    border-color: royalblue;
+    width: 40rem;
+    height: 4rem;
+    margin: .5rem auto;
+  }
+
+  .form-Contact > fieldset > textarea {
+    height: 15rem !important;
+  }
+
+  @media (max-width: 1080px) {
+    .form-Contact > fieldset {
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+/*End About.php*/
 
 div#box {
     justify-items: center;
@@ -81,6 +226,7 @@ div#box {
 div#box > p {
     color: #EEE;
     margin: 1rem auto;
+    font-weight: 600;
 }
 
 button {
@@ -90,8 +236,9 @@ button {
 
 div#box > button {
     background-color: transparent;
-    border-radius: .4rem;
-    border-color: #6ff;
+    border-radius: .3rem;
+    /* border-color: #6ff; */
+    border: 1px solid #6ff;
     box-shadow: 0px 1px 12px #6ff;
     color: #EEE;
     width: 5rem;
@@ -117,7 +264,7 @@ div.box3 {
 }
 
 @media (max-width: 1200px) {
-    
+
     div.box1 {
         grid-area: 1/1/2/2;
     }
@@ -148,14 +295,17 @@ div.box3 {
 main {
     /* display: grid; */
     /* grid: auto-flow 16em / repeat(3, 1fr); */
-    background: linear-gradient(#123 3);
     justify-content: center;
     align-content: center;
     width: 100%;
     height: 100%;
 }
 
+
+
+/* Application.php */
 main > .bg-modal {
+    position: relative;
     /* display: none; */
     width: 1024px;
     /* border: 1px solid black; */
@@ -164,13 +314,16 @@ main > .bg-modal {
 }
 
 main > .bg-modal > .modal-content {
+    position: relative;
     justify-content: center;
     align-items: center;
     /* border: 1px solid; */
-    max-width: 400px;
+    max-width: 650px;
+    border-style: none;
+    background-color: #EEE;
     width: 100%;
     border-radius: .4rem;
-    margin: 0 auto;
+    margin: 1em auto;
     display: block;
 }
 
@@ -181,16 +334,43 @@ main > .bg-modal > .modal-content > form {
     margin: 2rem auto;
 }
 
-main > .bg-modal > .modal-content > form > label {
+main > .bg-modal > .modal-content > form > fieldset {
+  margin: 2em auto;
+  max-width: 600px;
+  /* background-color: #EEE; */
+  border-radius: .3em;
+  justify-content: center;
+  border-left: none;
+  border-right: none;
+  align-items: center;
+}
+
+main > .bg-modal > .modal-content > form > fieldset > legend {
+  background-color: #112;
+  cursor: pointer;
+  border-radius: 24px;
+  box-shadow: 1px 2px 5px #6F6;
+  padding: .3em .7em;
+  color: #6F6;
+  font-weight: 600;
+}
+
+main > .bg-modal > .modal-content > form > fieldset > legend:hover {
+  color: royalblue;
+  box-shadow: 1px 2px 10px royalblue;
+}
+
+main > .bg-modal > .modal-content > form > fieldset > label {
     display: block;
+    margin: 1em auto;
     text-align: left;
     align-items: center;
 }
 
-.modal-content > form > button {
-    width: 25.8rem;
+.modal-content > form > fieldset > button {
+    width: 600px;
     height: 2.5rem;
-    margin: .5rem 0;
+    margin: .5rem 0 2em 0;
     font-weight: 600;
     border-radius: .2rem;
     border: 1px solid royalblue;
@@ -198,44 +378,85 @@ main > .bg-modal > .modal-content > form > label {
     justify-content: right;
 }
 
-.modal-content > form >button:hover {
+.modal-content > form > fieldset > button:hover {
     background-color: royalblue;
 }
 
-.modal-content > form > label > input[type="text"], 
-input[type="date"] {
-    justify-content: right;
+.modal-content > form > fieldset > label > input[type="text"],
+input[type="date"], input[type="tel"], textarea {
+    justify-content: justify;
+    border-radius: .2em;
     margin: .5rem auto;
-    border-color: #6F6;
+    border: 1px solid #6F6;
+    /* border-color: #6F6; */
     box-shadow: 0 0 10px #6F6;
-    width: 24.5rem;
+    width: 600px;
     height: 2.5rem;
-    padding: 0 .5rem;
+    padding-left: .5rem;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: rotate(45deg);
+  right: 14px;
+  top: 0;
+  color: #F66;
 }
 
 label > textarea {
     box-shadow: 0 0 12px #6F6;
+    height: 7em;
 }
 
-form > label > select {
+form > fieldset > label > select {
     justify-content: right;
+    border-radius: .2em;
+    cursor: pointer;
     margin: .5rem auto;
     border-color: #6F6;
     box-shadow: 0 0 10px #6F6;
-    width: 25.8rem;
+    width: 610px;
     height: 2.5rem;
     padding: 0 .5rem;
 }
 
-#form1 {
-    display: flex;
+.form1 {
+    /* display: none; */
 }
 
-#form2 {
+.form2#form2 {
     display: none;
 }
 
-#form3 {
+.form3#form3 {
     display: none;
 }
 
+/* End Application.php */
+
+
+/*  Start Payment Portal  */
+
+h1#payment-header {
+  text-align: center;
+  text-decoration: overline;
+}
+
+/*  End Payment Poatral */
+
+
+footer {
+  background-color: #112;
+
+  margin-top: 20%;
+  bottom: 0;
+  width: 100%;
+}
+
+footer > p {
+  text-align: center;
+  color: wheat;
+}

@@ -18,6 +18,11 @@ body {
     width: 100%;
 }
 
+.inner-main > form > button > .fas {
+    font-size: 1.2em;
+    color: #EEE;
+}
+
 ul {
     margin: 2rem;
     list-style: none;
@@ -263,11 +268,6 @@ h4 {
     background-color: #66F;
     border-radius: .2rem;
     color: #FFF;
-}
-
-button.on {
-    cursor: pointer !important;
-    text-align: center;
 }
 
 input[value="on"],input[value="off"] {

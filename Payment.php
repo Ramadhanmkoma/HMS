@@ -46,6 +46,12 @@
 
     <main class="main-Management" id="main">
 
+        <article>
+            <h2 class="payment-header" id="payment-header">
+                Payment Details
+            </h2>
+        </article>
+
     </main>
 
     <footer class="footer" id="footer">

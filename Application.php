@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
 
     <title>HMS | Application</title>
 </head>
@@ -21,9 +20,12 @@
             <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
             <li class="li-link"><a href="./Application.php" class="link-header" name="Application">Application</a></li>
             <li class="li-link"><a href="./Management.html" class="link-header" name="Management">Management</a></li>
-            <li class="li-link"><a href="./About.html" class="link-header" name="About">About</a></li>
-            <li class="li-link"><a href="#" class="link-header" name="Help">Help</a></li>
+            <li class="li-link"><a href="./Payment.php" class="link-header" name="Payment">Payments</a></li>
+            <li class="li-link"><a href="./About.php" class="link-header" name="About">About</a></li>
+            <li class="li-link"><a href="#" class="link-header" name="Help">Help <i class="fas fa-question-circle"></i></a></li>
         </ul>
+
+        <button class="sign-out"><a href="./index.html">Sign Out <i class="fas fa-sign-out"></i></a></button>
     </nav>
 
     <div class="head">
@@ -32,46 +34,55 @@
             <h1 class="title" id="title"> Hostel Management System </h1>
         </header>
     </div>
-    
+
     <style>
+
         a[name="Application"] {
-            color: royalblue;
+            color: royalblue !important;
         }
+
     </style>
 
     <section class="section" id="section">
         <div class="box1" id="box">
-            <p>SPECIAL CLASS (ROOM)</p>
+            <p><i class="fas fa-bed"></i> SPECIAL CLASS (ROOM)</p>
             <p class="box-info">Apply Here</p>
-            <button type="button" class="apply" id="special" onclick="toggleMenu()">Apply</button>
+            <button class="apply special" id="special">Apply</button>
         </div>
 
         <div class="box2" id="box" onclick="toggle();">
-            <p>ECONOMY CLASS (ROOM)</p>
+            <p><i class="fas fa-bed"></i> ECONOMY CLASS (ROOM)</p>
             <p class="box-info">Apply Here</p>
-            <button type="button" class="apply" id="economy" onclick="toggleMenu()">Apply</button>
+            <button type="button" class="apply economy" id="economy" onclick="toggleMenu2()">Apply</button>
         </div>
 
         <div class="box3" id="box">
-            <p>BUSINESS CLASS (ROOM)</p>
+            <p><i class="fas fa-bed"></i> BUSINESS CLASS (ROOM)</p>
             <p class="box-info">Apply Here</p>
-            <button type="button" class="apply" id="businness" onclick="toggleMenu()">Apply</button>
+            <button type="button" class="apply business" id="business" onclick="toggleMenu3()">Apply</button>
         </div>
-
     </section>
 
     <main class="main" id="main">
 
-        <div class="bg-modal" id="form1">
+<!-- Start SPECIAL CLASS -->
 
+        <div class="bg-modal form1" id="form1">
             <div class="modal-content">
+
+              <div class="close-btn">+</div>
+
                 <form action="#" method="post">
+
+                  <fieldset>
+                    <legend>SPECIAL CLASS</legend>
                     <label for="">
-                        Full Name:<br>
-                        <input type="text" name="FullName" placeholder="Full Name" />
+                        <i class="fas fa-users"></i> Full Name:<br>
+                        <input type="text" name="fullName" placeholder="Full Name" />
                     </label>
 
                     <label for="">
+                    <i class="fas fa-location"></i>
                         Location for Hostel : <br>
                         <select name="location" id="location">
                             <option value="Tunguu">Tunguu</option>
@@ -86,26 +97,44 @@
                     </label>
 
                     <label for="">
-                        Your Address : <br>
-                        <textarea rows="10" cols="53" name="address" > </textarea>
+
+                        <i class="fas fa-phone"></i> Phone: <br>
+                        <input type="tel" name="telephone" placeholder="0754XXXXXX" maxlength="12" minlength="10"/>
                     </label>
 
                     <label for="">
+                    <i class="fas fa-home"></i>
+                        Your Address : <br>
+                        <textarea rows="10" cols="49" name="address" > </textarea>
+                    </label>
+
+                    <label for="">
+                    <i class="fas fa-clock"></i>
                         Date : <br>
                         <input type="date" name="date" />
                     </label>
 
-                    <button>Submit</button>
-
+                    <button>Submit <i class="fas fa-paper-plane"></i></button>
+                  </fieldset>
                 </form>
             </div>
         </div>
-        <div class="bg-modal" id="form2">
+
+        <!-- End SPECIAL CLASS -->
+
+        <!-- Start ECONOMY CLASSs -->
+        <div class="bg-modal form2" id="form2">
             <div class="modal-content">
+              <div class="close-btn" onclick="toggleMenu()">+</div>
                 <form action="#" method="post">
+
+                  <fieldset>
+                    <legend>ECONOMY CLASS</legend>
+
                     <label for="">
+                    <i class="fas fa-users"></i>
                         Full Name:
-                        <input type="text" name="FullName" placeholder="Full Name" />
+                        <input type="text" name="fullName" placeholder="Full Name" />
                     </label>
 
                     <label for="">
@@ -123,67 +152,113 @@
                     </label>
 
                     <label for="">
-                        Full Name:
-                        <input type="text" name="FullName" placeholder="Full Name" />
+                        <i class="fas fa-phone"></i> Phone:
+                        <input type="tel" name="telephone" placeholder="0754XXXXXX" maxlength="12" minlength="10"/>
                     </label>
 
                     <label for="">
-                        Date :
-                        <input type="date" name="date" />
-                    </label>
-
-                    <button name="apply" type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="bg-modal" id="form3">
-            <div class="modal-content">
-                <form action="#" method="post">
-                    <label for="">
-                        Full Name:
-                        <input type="text" name="FullName" placeholder="Full Name" />
-                    </label>
-
-                    <label for="">
-                        Location:
-                        <select name="location" id="location">
-                            <option value="Tunguu">Tunguu</option>
-                            <option value="Mbweni">Mbweni</option>
-                            <option value="Beitras">Beitras</option>
-                            <option value="Maruhubi">Maruhubi</option>
-                            <option value="Chwaka">Chwaka</option>
-                            <option value="Kizimbani">Kizimbani</option>
-                            <option value="Kilimani">Kilimani</option>
-                            <option value="Vuga">Vuga</option>
-                        </select>
-                    </label>
-
-                    <label for="">
+                    <i class="fas fa-home"></i>
                         Your Address:
-                        <textarea rows="10" cols="53" name="address" placeholder="address" > </textarea>
+                        <textarea rows="10" cols="49" name="address" placeholder="address" > </textarea>
                     </label>
 
                     <label for="">
+                    <i class="fas fa-clock"></i>
                         Date :
                         <input type="date" name="date" />
                     </label>
 
-                    <button name="apply" type="submit" id="">Submit</button>
+                    <button name="apply" type="submit">Submit<i class="fas fa-paper-plane"></i></button>
+
+                  </fieldset>
                 </form>
             </div>
         </div>
+
+<!-- End ECONOMY Clss -->
+
+
+<!-- Start BUSINESS CLASS -->
+
+        <div class="bg-modal form3" id="form3">
+            <div class="modal-content">
+                <form action="#" method="post">
+                  <fieldset>
+                    <legend>BUSINESS CLASS</legend>
+                    <label for="">
+                    <i class="fas fa-users"></i>
+                        Full Name:
+                        <input type="text" name="fullName" placeholder="Full Name" />
+                    </label>
+
+                    <label for="">
+                    <i class="fas fa-location"></i>
+                        Location:
+                        <select name="location" id="location">
+                            <option value="Tunguu">Tunguu</option>
+                            <option value="Mbweni">Mbweni</option>
+                            <option value="Beitras">Beitras</option>
+                            <option value="Maruhubi">Maruhubi</option>
+                            <option value="Chwaka">Chwaka</option>
+                            <option value="Kizimbani">Kizimbani</option>
+                            <option value="Kilimani">Kilimani</option>
+                            <option value="Vuga">Vuga</option>
+                        </select>
+                    </label>
+
+                    <label for="">
+                        <i class="fas fa-phone"></i> Phone:
+                        <input type="tel" name="telephone" placeholder="0754XXXXXX" maxlength="12" minlength="10"/>
+                    </label>
+
+                    <label for="">
+                    <i class="fas fa-hotel"></i>
+                        Your Address:
+                        <textarea rows="10" cols="49" name="address" placeholder="address" > </textarea>
+                    </label>
+
+                    <label for="">
+                    <i class="fas fa-clock"></i>
+                        Date :
+                        <input type="date" name="date" />
+                    </label>
+
+                    <button name="apply" type="submit" id="">Submit<i class="fas fa-paper-plane"></i></button>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <!-- End BUSINESS CLASS -->
     </main>
 
-    <!-- <footer class="footer" id="footer">
-            footer
-        </footer> -->
+    <footer class="footer" id="footer">
+            <p> <i class="fas fa-copyright copyright"></i> Copyright all right reserved</p>
+    </footer>
 </body>
 
+<?php
+
+?>
+
 <script>
-    function toggleMenu() {
-        document.getElementById('special').addEventListener('click');
-    }
+        document.getElementsById('special').addEventListener('click', function() {
+        document.querySelector('.form1').style.display = 'flex';
+      });
+
+      document.querySelector('.close-btn').addEventListener('click', function() {
+        document.querySelector('.form1').style.display = 'none';
+      });
+
+    // function toggleMenu1() {
+    //   document.getElementById('economy').addEventListener('click', function() {
+    //   document.querySelector('.form2').style.display = 'flex';
+    // }
+    //
+    // function toggleMenu3() {
+    //     document.getElementById('form3').classList.toggle("active");
+    // }
 </script>
 
 </html>
