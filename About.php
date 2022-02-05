@@ -15,18 +15,7 @@
 
 <body>
 
-    <nav class="nav-bar">
-        <ul class="ul-link">
-            <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
-            <li class="li-link"><a href="./Application.php" class="link-header" name="Application">Application</a></li>
-            <li class="li-link"><a href="./Management.html" class="link-header" name="Management">Management</a></li>
-            <li class="li-link"><a href="./Payment.php" class="link-header" name="Payment">Payments</a></li>
-            <li class="li-link"><a href="./About.php" class="link-header" name="About">About</a></li>
-            <li class="li-link"><a href="#" class="link-header" name="Help">Help <i class="fas fa-question-circle"></i></a></li>
-        </ul>
-
-        <button class="sign-out"><a href="./index.html"><i class="fas fa-sign-out"></i> Sign Out</a></button>
-    </nav>
+    <?php require 'inc/header.php' ?>
 
     <div class="head">
         <header class="header">
@@ -121,9 +110,7 @@
 
     </main>
 
-    <footer class="footer" id="footer">
-            <p> <i class="fas fa-copyright copyright"></i> Copyright all right reserved</p>
-    </footer>
+    <?php #require 'inc/footer.php'; ?>
 </body>
 
 <?php

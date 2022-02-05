@@ -18,18 +18,7 @@
 
 <body>
 
-    <nav class="nav-bar">
-        <ul class="ul-link">
-            <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
-            <li class="li-link"><a href="./Application.php" class="link-header" name="Application">Application</a></li>
-            <li class="li-link"><a href="./Management.html" class="link-header" name="Management">Management</a></li>
-            <li class="li-link"><a href="./Payment.php" class="link-header" name="Payment">Payments</a></li>
-            <li class="li-link"><a href="./About.php" class="link-header" name="About">About</a></li>
-            <li class="li-link"><a href="#" class="link-header" name="Help">Help <i class="fas fa-question-circle"></i></a></li>
-        </ul>
-
-        <button type="button" class="sign-out"><a href="./index.html">Sign Out <i class="fas fa-sign-out"></i></a></button>
-    </nav>
+    <?php require 'inc/header.php' ?>
 
     <div class="head">
         <header class="header">
@@ -40,28 +29,116 @@
 
     <style>
         a[name="Payment"] {
-            color: royalblue !important;
+            color: #39F !important;
+        }
+
+        main {
+            width: 85%;
+            margin: 2em auto;
+            border-radius: .3em;
+            /* border: 1px solid black; */
+        }
+
+        @media screen and (max-width: 700px) {
+            main {
+                width: 90%;
+            }
+
+            @media screen and (max-width: 600px) {
+                .payment-box {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: 3;
+                    height: 10em;
+                    width: 85%;
+                    /* justify-content: center; */
+                }
+
+                .credit-btn {
+                    /* margin: 2em auto; */
+                    grid: 1/1/2/2;
+                }
+
+                .Mobile-btn {
+                    grid: 1/2/2/3;
+                }
+
+                .sim-btn {
+                    grid: 2/1/3/3;
+                }
+
+            }
+
+            @media screen and (max-width: 460px) {
+
+                .payment-box {
+                    display: block;
+                    height: 12em;
+                    width: 85%;
+                    justify-content: center;
+                    justify-items: center;
+                }
+
+                .payment-btn {
+                    margin: 3em auto 0 auto;
+                }
+
+            }
         }
     </style>
 
     <main class="main-Management" id="main">
 
+
+        <h2 class="payment-header" id="payment-header">
+            Payment Details
+        </h2>
         <article>
-            <h2 class="payment-header" id="payment-header">
-                Payment Details
-            </h2>
+            <div class="payment-form">
+                <div class="payment-box">
+                    <div class="payment-btn credit-card"> <a href="#credit" class="credit-btn" id="#credit"><i class="fas fa-credit-card-alt"></i> Credit Card </a></div>
+                    <div class="payment-btn Mobile"> <a href="" class="Mobile-btn" onclick="changesInfo()"> <i class="fas fa-signal"></i> Mobile Payment </a></div>
+                    <div class="payment-btn Sim-banking"> <a href="#" class="Sim-btn" onclick="changesInfo()"><i class="fas fa-handshake"></i> Sim Banking </a></div>
+                </div>
+
+                <section class="credit" id="credit">
+                    <form action="#" method="post">
+                        <label for="Credit-Card">
+                            Card Owner:
+                        </label>
+
+                        <input type="text" name="cardOwner" placeholder="Card Owner Name">
+
+                        <label for="Credit-Card">
+                            Card Number:
+                        </label>
+
+                        <input type="tel" name="cardNumber" placeholder="Valid Card No. eg: 4107 48XX XXXX XXXX" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="19" minlength="19">
+
+                        <label for="Credit-Card">
+                            Expiration Date:
+                        </label>
+
+                        <input type="month" name="cardNumber" min="2022-03" max="2030-12" />
+
+                        <label for="Credit-Card">
+                            CVV <i class="fas fa-question-circle" onclick="helpCVV()" style="cursor: pointer; color: #39f;"></i>
+                        </label>
+
+                        <input type="text" name="cardNumber" placeholder="CVV" style="width: 20%;" pattern="[0-9]{3}">
+
+                        <div class="submit-div">
+                            <button type="submit" class="confirm-btn">Confirm Payment</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </article>
 
     </main>
 
-    <footer class="footer" id="footer">
-            <p> <i class="fas fa-copyright copyright"></i> Copyright all right reserved</p>
-    </footer>
+    <script src="./js/javascript.js"> </script>
 
 </body>
-
-<script>
-
-</script>
 
 </html>

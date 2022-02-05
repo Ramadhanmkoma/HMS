@@ -26,7 +26,7 @@
     </header>
 
     <nav class="navbar" id="navbar">
-        <!-- <div class="nav-bar"> -->
+
             <ul class="ul-link">
                 <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
                 <li class="li-link"><a href="./Application.php" class="link-header" name="Application">Application</a>
@@ -37,7 +37,7 @@
                 <li class="li-link"><a href="./About.php" class="link-header" name="About">About</a></li>
                 <li class="li-link"><a href="#" class="link-header" name="Help">Help <i class="fas fa-question-circle"></i></a></li>
             </ul>
-        <!-- </div> -->
+
     </nav>
 
     <main class="main">

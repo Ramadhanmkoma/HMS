@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    transition: .7s;
+    transition: .7s ease-in-out;
     scroll-behavior: smooth;
 }
 
@@ -16,6 +16,10 @@ body, html {
     width: 100%;
     background-color: #FFF;
     box-shadow: 0px 1px 5px #112;
+}
+
+.nav-bars {
+  display: none;
 }
 
 .head {
@@ -34,10 +38,6 @@ body, html {
     margin-top: 6rem;
     width: 2rem;
     height: 2rem;
-}
-
-section.section#section > div {
-    margin: 1rem 1rem;
 }
 
 .nav-bar > .ul-link {
@@ -62,10 +62,7 @@ section.section#section > div {
     color: royalblue;
 }
 
-section.section#section {
-    display: grid;
-    grid: auto-flow 16em / repeat(auto-fill, minmax(20rem 1fr));
-}
+
 
 .sign-out {
   margin: 1rem 2em;
@@ -101,7 +98,7 @@ section.section#section {
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin: .7rem auto 1rem 11rem;
+    margin: .7rem auto 1rem auto;
     border-style: none;
     font-weight: 600;
     background-color: #59F;
@@ -117,7 +114,7 @@ section.section#section {
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin: .7rem auto 2.5rem 11rem;
+    margin: .7rem auto 2.5rem auto;
     border-style: none;
     font-weight: 600;
   }
@@ -132,6 +129,10 @@ section.section#section {
     height: 2.9rem;
   }
 
+  .about-sec {
+    width: 80%;
+  }
+
   .about-p {
     color: #112 !important;
     text-align: justify;
@@ -142,8 +143,7 @@ section.section#section {
 
   .form-Contact > fieldset {
     display: block;
-    max-width: 1000px;
-    width: 100%;
+    width: 80%;
     margin: .5rem auto;
     padding-top: 2rem;
     justify-content: justify;
@@ -151,7 +151,7 @@ section.section#section {
     align-items: center;
     background-color: rgba(235, 240, 240, .8);
     border-radius: .4rem;
-    border: 1px solid #112;
+    border: 1px solid transparent;
   }
 
   .form-Contact > fieldset > legend {
@@ -202,21 +202,27 @@ section.section#section {
   .form-Contact > fieldset > textarea {
     height: 15rem !important;
   }
+  
+/* End About.php */
 
-  @media (max-width: 1080px) {
-    .form-Contact > fieldset {
-      max-width: 600px;
-      width: 100%;
-    }
-  }
 
-/*End About.php*/
+/* Start Application.php */
+
+section.section#section {
+    display: grid;
+    display: -ms-grid;
+    grid: auto-flow 16em / repeat(auto-fill, minmax(20rem 1fr));
+}
+
+section.section#section > div {
+    margin: 1rem 1rem;
+}
 
 div#box {
     justify-items: center;
     align-items: center;
     text-align: center;
-    background-color: #112;
+    background-color: #112 !important;
     border-style: none;
     border-radius: .4rem;
     box-shadow: 10px 5px 10px #112;
@@ -263,50 +269,21 @@ div.box3 {
     grid-column: 3/4;
 }
 
-@media (max-width: 1200px) {
-
-    div.box1 {
-        grid-area: 1/1/2/2;
-    }
-
-    div.box2 {
-        grid-area: 1/2/2/3;
-    }
-
-    div.box3 {
-        grid-area: 2/1/3/2;
-    }
+.form1 {
+    display: none;
 }
 
-@media (max-width: 760px) {
-    div.box1 {
-        grid-area: 1/1/2/4;
-    }
-
-    div.box2 {
-        grid-area: 2/1/3/4;
-    }
-
-    div.box3 {
-        grid-area: 3/1/4/4;
-    }
+.form2#form2 {
+    display: none;
 }
 
-main {
-    /* display: grid; */
-    /* grid: auto-flow 16em / repeat(3, 1fr); */
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
+.form3#form3 {
+    display: none;
 }
 
 
-
-/* Application.php */
 main > .bg-modal {
     position: relative;
-    /* display: none; */
     width: 1024px;
     /* border: 1px solid black; */
     margin: 1rem auto;
@@ -373,13 +350,13 @@ main > .bg-modal > .modal-content > form > fieldset > label {
     margin: .5rem 0 2em 0;
     font-weight: 600;
     border-radius: .2rem;
-    border: 1px solid royalblue;
-    box-shadow: 0 0 12px royalblue;
+    border: 1px solid #39F;
+    box-shadow: 0 0 12px #39F;
     justify-content: right;
 }
 
 .modal-content > form > fieldset > button:hover {
-    background-color: royalblue;
+    background-color: #39F;
 }
 
 .modal-content > form > fieldset > label > input[type="text"],
@@ -423,26 +400,165 @@ form > fieldset > label > select {
     padding: 0 .5rem;
 }
 
-.form1 {
-    /* display: none; */
+
+/* End of Application.php */
+
+@media (max-width: 1200px) {
+
+    div.box1 {
+        grid-area: 1/1/2/2;
+    }
+
+    div.box2 {
+        grid-area: 1/2/2/3;
+    }
+
+    div.box3 {
+        grid-area: 2/1/3/2;
+    }
 }
 
-.form2#form2 {
+@media screen and (max-width: 920px) {
+  .nav-bar > .ul-link > .li-link {
     display: none;
+  }
+
+  .nav-bars {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .nav-bars > i.fas {
+    font-size: 2em;
+    margin: .7em 0 1em 1.3em;
+    cursor: pointer;
+  }
+
+  /* @media About.php */
+
+
+
+  /* End @media About.php */
 }
 
-.form3#form3 {
-    display: none;
+@media (max-width: 760px) {
+    div.box1 {
+        grid-area: 1/1/2/4;
+    }
+
+    div.box2 {
+        grid-area: 2/1/3/4;
+    }
+
+    div.box3 {
+        grid-area: 3/1/4/4;
+    }
 }
 
-/* End Application.php */
+main {
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
 
 
 /*  Start Payment Portal  */
 
-h1#payment-header {
+h2#payment-header {
+  text-align: center !important;
+  text-decoration: overline !important;
+  margin: 2em auto;
+  color: #39F;
+}
+
+.payment-form {
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #EFEFEF;
+  border-radius: .2em;
+  box-shadow: 2px 3px 4px #1e1e1e;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: #EFEFEF;
+}
+
+.payment-box {
+  border: 1px solid FFF;
+  background-color: #FFF;
+  max-width: 550px;
+  min-width: 300px;
+  height: 5em;
+  margin: 1em auto;
+  display: flex;
+  border-radius: .3em;
   text-align: center;
-  text-decoration: overline;
+  align-items: center
+}
+
+.payment-box > .payment-btn {
+  flex: 1;
+  cursor: pointer;
+}
+
+.credit-btn, .Mobile-btn, .Sim-btn {
+  background-color: #EFEFEF;
+  font-weight: 500;
+  /* border: 1px solid #39f; */
+  color: #112;
+  text-decoration: none;
+  padding: .7em 1em;
+  width: 100%;
+  height: 100%;
+  border-radius: .34em;
+}
+
+.credit-btn, .Mobile-btn:hover, .Sim-btn:hover {
+  background-color: #38F;
+  color: #FFF;
+}
+
+.payment-form > section > form > label {
+  display: block;
+  margin-top: 1em;
+  margin-left: 1em;
+  font-weight: 600;
+}
+
+/* .payment-form > section > form > label {
+
+} */
+
+.submit-div {
+  border: 1px solid transparent;
+  background-color: #e2e2e2;
+  margin: 1em auto 2em auto;
+  max-width: 550px;
+  min-width: 300px;
+}
+
+.submit-div > .confirm-btn {
+  border: 1px solid #39F;
+  border-radius: .239em;
+  background-color: #38F;
+  color: #FFF;
+  font-weight: 600;
+  width: 95%;
+  height: 3.5em;
+  margin: 1em 1em;
+}
+
+.payment-form > section > form > input {
+  justify-content: center;
+  align-content: center;
+  height: 3.52em;
+  margin: 1em 2em 1em 2em;
+  width: 90%;
+  border-radius: .35em;
+  padding-left: .59em;
+  border: 1px solid #e1e1e1;
 }
 
 /*  End Payment Poatral */
@@ -450,8 +566,7 @@ h1#payment-header {
 
 footer {
   background-color: #112;
-
-  margin-top: 20%;
+  margin-top: 100%;
   bottom: 0;
   width: 100%;
 }
@@ -460,3 +575,5 @@ footer > p {
   text-align: center;
   color: wheat;
 }
+
+
