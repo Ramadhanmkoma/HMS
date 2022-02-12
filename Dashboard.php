@@ -1,9 +1,15 @@
 
 <?php
-  $hostel = 122;
-  $room = 1326;
-  $roomLeft = 0;
-  $payment = 00.00;
+    session_start();
+    #print_r($_SESSION);
+    $name = $_SESSION['name'];
+    #$password = $_SESSION['password'];
+    
+
+    $hostel = 122;
+    $room = 1326;
+    $roomLeft = 0;
+    $payment = 00.00;
  ?>
 
 <!DOCTYPE html>
@@ -63,7 +69,8 @@
             <p>User Info</p>
             <hr style="width: 95%; margin: 0 auto; border: 1px solid #EEE; box-shadow: 0 0 20px #EEE;">
             <i class="fas fa-address-book"></i>
-            Username: <label for="User-Info" name="user-info">NULL</label>
+            Username: <label for="User-Info" name="user-info"> 
+                <?php echo $name; ?> </label>
         </div>
         <div class="box" id="box5">
             <p>Bookings</p>

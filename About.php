@@ -1,4 +1,28 @@
+<?php
 
+  $msg = '';
+  $msgClass = '';
+#  $success = '';
+//Check for submit button
+  if (filter_has_var(INPUT_POST, 'submit')) {
+    // code...
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+
+    if (!empty($name) && !empty($email) && !empty($phone) && !empty($message)) {
+      // Successfully submitted
+      $msg = '"Message Successfully sent"';
+      $msgClass = "btn-success";
+      echo "";
+    } else {
+      $msg = 'Please fill in all the fields';
+      $msgClass = 'btn-danger';
+    }
+  }
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +53,27 @@
             color: royalblue !important;
         }
 
+        .btn-danger {
+          background-color: #F66;
+          margin: 2em auto;
+          width: 79%;
+          /* height: 2.5em; */
+          padding: 1em 1em;
+          border-radius: .4em;
+          font-family: -apple-system, sans-serif;
+        }
+
+        .btn-success {
+          background-color: #6F6;
+          margin: 2em auto;
+          width: 79%;
+          /* height: 2.5em; */
+          padding: 1em 1em;
+          border-radius: .4em;
+          font-family: -apple-system, sans-serif;
+        }
+
+
         main {
           justify-content: center !important;
           align-content: center !important;
@@ -38,7 +83,7 @@
           margin: 2rem auto;
         }
 
-        @@media (max-width: 1080px) {
+        @media (max-width: 1080px) {
           main {
             max-width: 800px !important;
             width: 100%;
@@ -86,6 +131,16 @@
         <h1>Contact<font color="black">-Us</font></h1>
 
         <form class="form-Contact" action="#" method="post">
+          <?php if ($msg != ''): ?>
+            <div class = "btn <?php echo $msgClass; ?>" > <?php echo "{$msg}"; ?> </div>
+          <?php endif ?>
+
+          <?php if ($msg == ''): ?>
+            <div class="btn <?php echo $msgClass; ?>">
+              <?php echo "{$success}"; ?>
+            </div>
+          <?php endif ?>
+
           <fieldset>
             <legend>Leave Us a Message</legend>
             <label for="Name" id="Contact-label"><i class="fas fa-user"></i> Name: </label>
@@ -95,7 +150,7 @@
             <label for="Email" id="Contact-label"><i class="fas fa-envelope"></i> Email: </label>
               <input type="email" name="email" value="" placeholder="Email@example.com">
 
-              <label for="Email" id="Contact-label"><i class="fas fa-phone"></i> Phone: </label>
+              <label for="Phone" id="Contact-label"><i class="fas fa-phone"></i> Phone: </label>
                 <input type="tel" name="phone" value="" placeholder="0754-XXX-XXX" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" maxlength="12" minlength="12">
 
               <label for="Message"><i class="fas fa-message"></i> Message: </label>

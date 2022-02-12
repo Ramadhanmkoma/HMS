@@ -35,7 +35,7 @@
             <main class="main">
                 <div class="inner-main">
                     <form action="" method="post" name="login">
-                        <button type="button" id="buttonLogin" /><i class="fas fa-sign-in"></i> Sign In Now</button>
+                        <button type="button" id="buttonLogin" onclick="btnLogin()" /><i class="fas fa-sign-in"></i> Sign In Now</button>
                     </form>
                     <form action="./register.html" method="post" name="register">
                         <button type="submit" id="buttonRegister" />Register Now <i class="fas fa-refresh"></i></button>
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         document.getElementById('buttonLogin').addEventListener('click', function () {
             document.querySelector('.bg-modal').style.display = 'flex';
         });
@@ -71,7 +71,9 @@
         document.getElementById('close').addEventListener('click', function() {
             document.querySelector('.bg-modal').style.display = 'none'; 
         });
-    </script>
+    </script> -->
+
+<script src="js/javascript.js"> </script>
 </body>
 
 </html>

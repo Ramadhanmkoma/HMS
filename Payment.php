@@ -1,5 +1,7 @@
 <?php
+    session_start();
 
+    $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +93,7 @@
 
 
         <h2 class="payment-header" id="payment-header">
-            Payment Details
+            Payment Details <?php echo "{$username}"; ?>
         </h2>
         <article>
             <div class="payment-form">

@@ -35,3 +35,16 @@ function specialClass() {
 function economyClass() {
     
 }
+
+
+function btnLogin() {
+    document.getElementById('buttonLogin').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+}
+
+function bgClose() {
+    document.getElementById('close').addEventListener('click', function() {
+        document.querySelector('.bg-modal').style.display = 'none'; 
+    });
+}

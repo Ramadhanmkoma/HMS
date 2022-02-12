@@ -14,6 +14,7 @@ html, body {
 body {
     display: block;
     background-color: #EEE;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: 17em auto;
     grid-template-rows: 5em min-content max-content min-content;
@@ -38,7 +39,6 @@ body {
     box-shadow: 0 5px 5px #112;
     grid-area: 1/1/2/3;
     /* margin: 2rem auto; */
-    padding: 2rem auto;
     height: 50px;
     background-color: #EEE;
     border: 1px solid black;
@@ -46,9 +46,9 @@ body {
     border-top: none;
     border-left: none;
     position: fixed;
-    padding: 2rem auto;
+    padding: 2rem auto !important;
     width: 100%;
-    margin: 2rem auto;
+    margin: 0 auto;
 }
 
 a[name="Dashboard"] {
@@ -176,6 +176,7 @@ section.btn-sec-apply > a > button:hover {
 
 .li-link {
     display: inline-block;
+    margin: 1em auto;
     padding: 2rem auto;
 }
 
