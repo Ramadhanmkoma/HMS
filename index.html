@@ -18,8 +18,8 @@
     <div class="nav-div">
         <nav class="nav-bar">
             <ul>
-                <li><a href="#" class="links" id="buttonLogin">Sign In</a></li>
-                <li><a href="./register.html" class="links" id="links">Sign Up</a></li>
+                <li><a href="login.php" class="links" id="buttonLogin">Sign In</a></li>
+                <li><a href="./register.php" class="links" id="links">Sign Up</a></li>
                 <li><a href="#" class="links" id="links">About Us</a></li>
                 <li><a href="#" class="links" id="links">Contact Us</a></li>
             </ul>
@@ -37,7 +37,7 @@
                     <form action="" method="post" name="login">
                         <button type="button" id="buttonLogin" onclick="btnLogin()" /><i class="fas fa-sign-in"></i> Sign In Now</button>
                     </form>
-                    <form action="./register.html" method="post" name="register">
+                    <form action="./register.php" method="post" name="register">
                         <button type="submit" id="buttonRegister" />Register Now <i class="fas fa-refresh"></i></button>
                     </form>
                 </div>
@@ -48,7 +48,7 @@
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close" id="close">+</div>
-            <form action="./db_conn.php" method="post">
+            <form action="./dbConfig/conn.php" method="post">
                 <img src="./Assets/hotel-hostel-svgrepo-com.svg" alt="user">
                 <label for="Username">Username/Email: </label>
                 <input type="text" name="username" placeholder="Username/Email" required/>

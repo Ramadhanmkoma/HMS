@@ -1,18 +1,18 @@
 
 let projectTitle = 'Hostel Managemrnt System';
 
-document.getElementById('buttonLogin').addEventListener('click', function() {
+document.getElementById('buttonLogin').addEventListener('click', function () {
     document.querySelector('.bg-modal').style.display = 'flex';
 });
 document.getElementById('buttonRegister').addEventListener('click', function () {
     document.querySelector('.bg-modal-reg').style.display = 'flex';
 });
 
-document.getElementById('close').addEventListener('click', function() {
+document.getElementById('close').addEventListener('click', function () {
     document.querySelector('.bg-modal').style.display = 'none';
 });
 
-document.getElementById('close').addEventListener('click', function() {
+document.getElementById('close').addEventListener('click', function () {
     document.querySelector('.bg-modal-reg').style.display = 'none';
 });
 
@@ -33,7 +33,7 @@ function specialClass() {
 }
 
 function economyClass() {
-    
+
 }
 
 
@@ -44,7 +44,26 @@ function btnLogin() {
 }
 
 function bgClose() {
-    document.getElementById('close').addEventListener('click', function() {
-        document.querySelector('.bg-modal').style.display = 'none'; 
+    document.getElementById('close').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+}
+
+function special() {
+    document.getElementsById('special').addEventListener('click', function () {
+        document.querySelector('.form1').style.display = 'flex';
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', function () {
+        document.querySelector('.form1').style.display = 'none';
+    });
+}
+
+function economy() {
+    document.getElementById('economy').addEventListener('click', function () {
+        document.querySelector('.form2').style.display = 'flex';
+    });
+    document.querySelector('.close-btn').addEventListener('click', function () {
+        document.querySelector('.form2').style.display = 'none';
     });
 }

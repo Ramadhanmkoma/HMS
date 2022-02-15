@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
     <div class="inner-div">
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./register.php">Sign Up</a></li>
           <li><a href="#">Help</a></li>
         </ul>
       </nav>

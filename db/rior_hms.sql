@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2022 at 10:53 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.29
+-- Generation Time: Feb 15, 2022 at 03:57 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hms_db`
+-- Database: `rior_hms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `Id` int(11) NOT NULL,
+  `Name` int(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `booking_ID` int(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `B_id` int(50) NOT NULL,
+  `Checkin` datetime NOT NULL,
+  `checkout` datetime NOT NULL,
+  `B_date` date DEFAULT NULL,
+  `Admin_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -31,11 +58,11 @@ CREATE TABLE `reg_users` (
   `id` int(11) NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `dob` date NOT NULL,
   `pwd` varchar(100) NOT NULL,
-  `number` int(15) NOT NULL,
+  `number` bigint(15) NOT NULL,
   `gender` char(1) NOT NULL,
   `roleId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -45,9 +72,9 @@ CREATE TABLE `reg_users` (
 --
 
 INSERT INTO `reg_users` (`id`, `firstName`, `lastName`, `username`, `email`, `dob`, `pwd`, `number`, `gender`, `roleId`) VALUES
-(6, 'juma', 'ali', '', 'ridhoneseif65@gmail.com', '2008-12-30', '', 2147483647, 'm', NULL),
-(7, 'juma', 'ali', '', 'ridhoneseif65@gmail.com', '2008-12-30', '', 2147483647, 'm', NULL),
-(8, 'juma', 'ali', '', 'ridhoneseif65@gmail.com', '2008-12-30', '', 2147483647, 'm', NULL);
+(6, 'juma', 'ali', 'jumajmj', 'ridhoneseif65@gmail.com', '2008-12-30', '$2y$10$ZSSjRqfLvJwgzXP2UY.f1eglboAjqsnhb5Mqg8lv0r7MzC74OW9XW', 2147483647, 'm', NULL),
+(48, 'Amriya', 'Ally Said', 'Amriya', 'Amriyaally2@gmail.com', '1999-09-12', '$2y$10$oeHbqvVrKZqvUijC3rIliO/qOsyUz9DK2/NKBEwNixSGVeJrBXETC', 255774095415, 'F', NULL),
+(57, 'Ramadhan', 'Mohammed Mkoma', 'Anonymous', 'AnonymousBlackhat137@gmail.com', '1999-07-07', '$2y$10$rNBC.albfNgNn9UcttFXvu8Yci.0hbq..6qwdGWZ5ae8.pRxIaxGm', 255766570255, 'M', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,10 +169,25 @@ CREATE TABLE `rior_usersrole` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `FK_Booking` (`booking_ID`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`B_id`);
+
+--
 -- Indexes for table `reg_users`
 --
 ALTER TABLE `reg_users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`),
   ADD KEY `roleId` (`roleId`);
 
 --
@@ -203,7 +245,7 @@ ALTER TABLE `rior_usersrole`
 -- AUTO_INCREMENT for table `reg_users`
 --
 ALTER TABLE `reg_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `rior_hostel`
@@ -244,6 +286,12 @@ ALTER TABLE `rior_usersrole`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `FK_Booking` FOREIGN KEY (`booking_ID`) REFERENCES `booking` (`B_id`);
 
 --
 -- Constraints for table `reg_users`

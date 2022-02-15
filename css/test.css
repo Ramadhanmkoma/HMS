@@ -73,6 +73,7 @@ img[alt="hms"] {
 .main {
     grid-column: 1/3;
     grid-row: 3/4;
+    display: -ms-grid;
     display: grid;
     grid-gap: 1em 1em;
     grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
