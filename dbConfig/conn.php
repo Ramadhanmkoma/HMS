@@ -1,14 +1,14 @@
 <?php
 
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $username = $_POST['username'];
-    $email= $_POST['email'];
-    $dob = $_POST['dob'];
-    $password = $_POST['password'];
-    $number = $_POST['number'];
-    $gender = $_POST['gender'];
-    $re_password = $_POST['re_password'];
+    $firstName = htmlspecialchars($_POST['firstName'], ENT_QUOTES);
+    $lastName = htmlspecialchars($_POST['lastName'], ENT_QUOTES);
+    $username = htmlspecialchars($_POST['username'], ENT_QUOTES);
+    $email= htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $dob = htmlspecialchars($_POST['dob'], ENT_QUOTES);
+    $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+    $number = htmlspecialchars($_POST['number'], ENT_QUOTES);
+    $gender = htmlspecialchars($_POST['gender'], ENT_QUOTES);
+    $re_password =htmlspecialchars( $_POST['re_password'], ENT_QUOTES);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -23,11 +23,11 @@
         $result = $conn->query($query);
         
         //Free Results
-        mysqli_free_result($result);    
 
         header("Location: http://localhost/hms/index.html");
     }
 
+    //mysqli_free_result($result);    
     
     mysqli_close($conn);
 ?> 

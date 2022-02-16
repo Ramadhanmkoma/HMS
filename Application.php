@@ -233,7 +233,7 @@
     </main>
 
     <?php #require 'inc/footer.php'; ?>
-    
+            
     <!-- <footer class="footer" id="footer">
             <p> <i class="fas fa-copyright copyright"></i> Copyright all right reserved</p>
     </footer> -->

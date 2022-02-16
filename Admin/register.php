@@ -11,16 +11,16 @@ if (isset($_POST['submit'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./fontawesome/css/all.css">
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../fontawesome/css/all.css">
+  <link rel="stylesheet" href="../fontawesome/css/all.min.css">
   <!-- <link rel="stylesheet" href="css/register.css" /> -->
-  <title>Tenant's | Registration Portal</title>
+  <title>Staff's | Registration Portal</title>
 </head>
 
 <style>
-  * {
+    * {
     transition: .7s ease-in-out;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   }
@@ -53,10 +53,10 @@ if (isset($_POST['submit'])) {
 
       <h1 class="heading" id="hostel" style="text-align: center;">Hostel Management System</h1>
       <br>
-      <h3 class="sub-head" style="text-align: center;">Tenant Registration Portal</h3>
+      <h3 class="sub-head" style="text-align: center;">Staff Registration Portal</h3>
       <br>
     </div>
-    <div class="container login-div" style="width: 50%;">
+    <div class="container login-div" style="width: 60%;">
 
       <form action="./dbConfig/conn.php" method="POST" class="form-control">
         <label for="Firstname">First Name: </label>
@@ -71,18 +71,18 @@ if (isset($_POST['submit'])) {
         <label for="Email">Email: </label>
         <input type="email" id="email" class="form-control UserInfo" placeholder="name@example.com" name="email" required />
 
-        <label for="Date">Date Of Birth: </label>
-        <input type="date" id="date" class="form-control UserInfo" placeholder="Enter your Last name here..." max="2009-01-01" name="dob" required />
-
-
         <label for="Email">Role: </label>
         <select class="form-control" name="userrole" required />
-        <option value="4" selected>Tenant</option>
-        <option value="1" disabled>Database Administrator</option>
-        <option value="2" disabled>Manager</option>
-        <option value="3" disabled>Cashier</option>
-        <option value="4" disabled>House Keeper</option>
+        <option value="" selected disabled>Please Select From the option below</option>
+        <option value="1">Database Administrator</option>
+        <option value="2">Manager</option>
+        <option value="3">Cashier</option>
+        <option value="4" disabled>Tenant</option>
+        <option value="5">House Keeper</option>
         </select>
+
+        <label for="Date">Date Of Birth: </label>
+        <input type="date" id="date" class="form-control UserInfo" placeholder="Enter your Last name here..." max="2009-01-01" name="dob" required />
 
         <label for="Password">Password: </label>
         <input type="password" id="pass" class="form-control password" name="password" placeholder="Enter new password..." required />
@@ -92,7 +92,6 @@ if (isset($_POST['submit'])) {
 
         <label for="Phone">Phone number: </label>
         <input type="tel" id="phone" class="form-control UserInfo" placeholder="eg: 255754XXXXXX" name="number" maxlength="12" minlength="12" pattern="[0-9]{12}" required />
-
         <br>
         <fieldset>
           <legend>Gender</legend>
@@ -103,8 +102,7 @@ if (isset($_POST['submit'])) {
             <input type="radio" id="gender" name="gender" value="F" />
           </label>
         </fieldset>
-
-        <br>
+        <br><br>
         <button class="btn btn-outline-primary btn-log" id="btn-register" style="width: 100%;" type="submit" name="submit">Register now</button>
         <br><br>
         <button class="btn btn-danger btn-log" id="btn-clear" type="reset" style="width: 100%;" name="clear">Clear</button>
