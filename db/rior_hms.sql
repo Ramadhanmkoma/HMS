@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2022 at 03:57 PM
+-- Generation Time: Feb 16, 2022 at 07:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -72,9 +72,9 @@ CREATE TABLE `reg_users` (
 --
 
 INSERT INTO `reg_users` (`id`, `firstName`, `lastName`, `username`, `email`, `dob`, `pwd`, `number`, `gender`, `roleId`) VALUES
-(6, 'juma', 'ali', 'jumajmj', 'ridhoneseif65@gmail.com', '2008-12-30', '$2y$10$ZSSjRqfLvJwgzXP2UY.f1eglboAjqsnhb5Mqg8lv0r7MzC74OW9XW', 2147483647, 'm', NULL),
-(48, 'Amriya', 'Ally Said', 'Amriya', 'Amriyaally2@gmail.com', '1999-09-12', '$2y$10$oeHbqvVrKZqvUijC3rIliO/qOsyUz9DK2/NKBEwNixSGVeJrBXETC', 255774095415, 'F', NULL),
-(57, 'Ramadhan', 'Mohammed Mkoma', 'Anonymous', 'AnonymousBlackhat137@gmail.com', '1999-07-07', '$2y$10$rNBC.albfNgNn9UcttFXvu8Yci.0hbq..6qwdGWZ5ae8.pRxIaxGm', 255766570255, 'M', NULL);
+(48, 'Amriya', 'Ally Said', 'Amriya', 'Amriyaally2@gmail.com', '1999-09-12', '$2y$10$oeHbqvVrKZqvUijC3rIliO/qOsyUz9DK2/NKBEwNixSGVeJrBXETC', 255774095415, 'F', 4),
+(57, 'Ramadhan', 'Mohammed Mkoma', 'Anonymous', 'AnonymousBlackhat137@gmail.com', '1999-07-07', '$2y$10$rNBC.albfNgNn9UcttFXvu8Yci.0hbq..6qwdGWZ5ae8.pRxIaxGm', 255766570255, 'M', 1),
+(58, 'Mwanaisha', 'Haji Ramadhan', 'Ishaa', 'Aishahaji@hms.com', '1999-12-22', '$2y$10$T8Ba7MV0U3IXUIw38em2/OmiaSYDqy9PKmWF4.1T9x4yS3m3gX6Jq', 255777161522, 'F', 4);
 
 -- --------------------------------------------------------
 
@@ -165,6 +165,17 @@ CREATE TABLE `rior_usersrole` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `rior_usersrole`
+--
+
+INSERT INTO `rior_usersrole` (`roleId`, `roleName`) VALUES
+(1, 'DB Administrator'),
+(2, 'Manager'),
+(3, 'Cashier'),
+(4, 'Tenant'),
+(5, 'House Keeper');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -245,7 +256,7 @@ ALTER TABLE `rior_usersrole`
 -- AUTO_INCREMENT for table `reg_users`
 --
 ALTER TABLE `reg_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `rior_hostel`
@@ -281,7 +292,7 @@ ALTER TABLE `rior_roomtypeid`
 -- AUTO_INCREMENT for table `rior_usersrole`
 --
 ALTER TABLE `rior_usersrole`
-  MODIFY `roleId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `roleId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

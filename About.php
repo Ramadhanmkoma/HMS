@@ -44,7 +44,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         $msgClass = "btn-danger";
 
       }
-     
+
 
     }
 
@@ -199,14 +199,9 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
   </main>
 
-  <?php #require 'inc/footer.php'; 
+  <?php #require 'inc/footer.php';
   ?>
 </body>
-
-<?php
-
-?>
-
 
 <script>
 

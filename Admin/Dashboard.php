@@ -25,11 +25,11 @@
     <header class="header" id="header">
        <img src="../Assets/hotel-hostel-svgrepo-com.svg" alt="hms"> <h1 class="title">Hostel Management System</h1>
     </header>
+
     <nav class="navbar" id="navbar">
         <ul class="ul-link">
-            <li class="li-link"><a href="./Dashboard.html" class="link-header" name="Dashboard">Dashboard</a></li>
-            <li class="li-link"><a href="./Application.html" class="link-header" name="Application">Application</a></li>
-            <li class="li-link"><a href="./Management.html" class="link-header" name="Management">Management</a></li>
+            <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
+            <li class="li-link"><a href="./Payment_Info.php" class="link-header" name="Payment_Info">Payment-Info</a></li>
             <li class="li-link"><a href="./About.html" class="link-header" name="About">About</a></li>
             <li class="li-link"><a href="#" class="link-header" name="Users">User Management</a></li>
         </ul>

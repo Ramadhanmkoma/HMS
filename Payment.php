@@ -1,7 +1,42 @@
 <?php
     session_start();
+    $username = $_SESSION['name'];
 
-    $username = $_SESSION['username'];
+    //code ... 
+    $cardOwner = '';
+    $cardNumber = '';
+    $expDate = '';
+    $cvv = '';
+
+    if (isset($_POST['submit'])) {
+      // cardOwner
+      $ok = true;
+      if (!isset($_POST['']) || $_POST[''] === '') {
+        // code...
+        $ok = false;
+      } else {
+        $cardOwner = htmlspecialchars($_POST['cardOwner'], ENT_QUOTES);
+      }
+
+      #cardNumber
+      if (!isset($_POST['']) || $_POST[''] === '') {
+        // code...
+        $ok = false;
+      } else {
+        $cardNumber = htmlspecialchars($_POST['cardNumber'], ENT_QUOTES);
+      }
+
+      #cvv
+      if (!isset($_POST['']) || $_POST[''] === '') {
+        // code...
+        $ok = false;
+      } else {
+        $cvv = htmlspecialchars($_POST['cvv'], ENT_QUOTES);
+      }
+
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +128,7 @@
 
 
         <h2 class="payment-header" id="payment-header">
-            Payment Details <?php echo "{$username}"; ?>
+            Payment Details for <?php echo "{$username}"; ?>
         </h2>
         <article>
             <div class="payment-form">
@@ -109,29 +144,30 @@
                             Card Owner:
                         </label>
 
-                        <input type="text" name="cardOwner" placeholder="Card Owner Name">
+                        <input type="text" name="cardOwner" placeholder="Card Owner Name" required>
 
                         <label for="Credit-Card">
                             Card Number:
                         </label>
 
-                        <input type="tel" name="cardNumber" placeholder="Valid Card No. eg: 4107 48XX XXXX XXXX" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="19" minlength="19">
+                        <input type="tel" name="cardNumber" placeholder="Valid Card No. eg: 4107 48XX XXXX XXXX" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="19" minlength="19" required>
 
                         <label for="Credit-Card">
                             Expiration Date:
                         </label>
 
-                        <input type="month" name="cardNumber" min="2022-03" max="2030-12" />
+                        <input type="month" name="expDate" min="2022-03" max="2030-12" / required>
 
                         <label for="Credit-Card">
                             CVV <i class="fas fa-question-circle" onclick="helpCVV()" style="cursor: pointer; color: #39f;"></i>
                         </label>
 
-                        <input type="text" name="cardNumber" placeholder="CVV" style="width: 20%;" pattern="[0-9]{3}">
+                        <input type="text" name="cvv" placeholder="CVV" style="width: 20%;" pattern="[0-9]{3}" required>
 
-                        <div class="submit-div">
-                            <button type="submit" class="confirm-btn">Confirm Payment</button>
-                        </div>
+                          <div class="submit-div">
+                              <button type="submit" class="confirm-btn" name="submit">Confirm Payment</button>
+                          </div>
+
                     </form>
                 </section>
             </div>

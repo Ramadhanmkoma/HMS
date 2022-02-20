@@ -33,7 +33,7 @@
         <div class="box1" id="box">
             <p><i class="fas fa-bed"></i> SPECIAL CLASS (ROOM)</p>
             <p class="box-info">Apply Here</p>
-            <button class="apply special" id="special" name="special" onclick="special()">Apply</button>
+            <button type="submit" class="apply special" id="special" name="special">Apply</button>
         </div>
 
         <div class="box2" id="box" onclick="toggle();">
@@ -53,18 +53,8 @@
 
         <!-- Start SPECIAL CLASS -->
 
-        <?php
+        <?php if (isset($_REQUEST['special'])) : ?>
 
-            if (isset($_POST['special'])) {
-                # code...
-                echo '<style> 
-                    .form1 {
-                        display: flex;
-                    } 
-                </style>';
-            }
-
-        ?>
         <div class="bg-modal form1" id="form1">
             <div class="modal-content">
 
@@ -117,7 +107,7 @@
                 </form>
             </div>
         </div>
-
+        <?php endif ?>
 
         <!-- End SPECIAL CLASS -->
 
@@ -232,31 +222,14 @@
         <!-- End BUSINESS CLASS -->
     </main>
 
-    <?php #require 'inc/footer.php'; ?>
-            
+    <?php #require 'inc/footer.php'; 
+    ?>
+
     <!-- <footer class="footer" id="footer">
             <p> <i class="fas fa-copyright copyright"></i> Copyright all right reserved</p>
     </footer> -->
 
     <script src="./js/javascript.js"> </script>
 </body>
-
-<?php
-
-?>
-
-<script>
-   
-    
-
-    // function toggleMenu1() {
-    //   document.getElementById('economy').addEventListener('click', function() {
-    //   document.querySelector('.form2').style.display = 'flex';
-    // }
-    //
-    // function toggleMenu3() {
-    //     document.getElementById('form3').classList.toggle("active");
-    // }
-</script>
 
 </html>

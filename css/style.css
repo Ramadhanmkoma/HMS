@@ -209,8 +209,8 @@ body, html {
 /* Start Application.php */
 
 section.section#section {
+    display: -ms-grid;  
     display: grid;
-    display: -ms-grid;
     grid: auto-flow 16em / repeat(auto-fill, minmax(20rem 1fr));
 }
 
@@ -243,7 +243,6 @@ button {
 div#box > button {
     background-color: transparent;
     border-radius: .3rem;
-    /* border-color: #6ff; */
     border: 1px solid #6ff;
     box-shadow: 0px 1px 12px #6ff;
     color: #EEE;
@@ -270,15 +269,15 @@ div.box3 {
 }
 
 .form1 {
-    display: none;
+    display: flex;
 }
 
 .form2#form2 {
-    display: none;
+    /* display: none; */
 }
 
 .form3#form3 {
-    display: none;
+    /* display: none; */
 }
 
 
@@ -365,7 +364,6 @@ input[type="date"], input[type="tel"], textarea {
     border-radius: .2em;
     margin: .5rem auto;
     border: 1px solid #6F6;
-    /* border-color: #6F6; */
     box-shadow: 0 0 10px #6F6;
     width: 600px;
     height: 2.5rem;
@@ -506,7 +504,6 @@ h2#payment-header {
 .credit-btn, .Mobile-btn, .Sim-btn {
   background-color: #EFEFEF;
   font-weight: 500;
-  /* border: 1px solid #39f; */
   color: #112;
   text-decoration: none;
   padding: .7em 1em;
