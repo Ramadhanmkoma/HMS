@@ -1,11 +1,31 @@
 <?php
+$conn = mysqli_connect('localhost', 'root', '12345', 'rior_hms');
+
+//Check for Connection\
+if (mysqli_connect_errno()) {
+  # code...
+  echo 'Connection Failed '. mysqli_connect_errno();
+}
+
+if ($conn) {
+  # code...
+  $sql = "SELECT username, email, pwd FROM reg_users";
+  $result = $conn->query($sql);
+}
 
 if (isset($_POST['submit'])) {
+
+  if (isset($_POST['name']) && isset($_POST['password'])) {
+    # code...
+    
   session_start();
 
   $_SESSION['name'] = htmlentities($_POST['name']);
   $_SESSION['password'] = htmlentities($_POST['password']);
+  }
+
   #echo $_SESSION['name'];
+  
   header('Location: Dashboard.php');
 }
 

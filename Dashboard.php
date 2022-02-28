@@ -37,7 +37,7 @@
                 <li class="li-link"><a href="./Dashboard.php" class="link-header" name="Dashboard">Dashboard</a></li>
                 <li class="li-link"><a href="./Application.php" class="link-header" name="Application">Application</a>
                 </li>
-                <li class="li-link"><a href="./Management.html" class="link-header" name="Management">Management</a>
+                <li class="li-link"><a href="./Management.php" class="link-header" name="Management">Management</a>
                 </li>
                 <li class="li-link"><a href="./Payment.php" class="link-header" name="Payment">Payments</a></li>
                 <li class="li-link"><a href="./About.php" class="link-header" name="About">About</a></li>
