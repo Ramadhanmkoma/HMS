@@ -89,38 +89,41 @@
             margin: 6em auto;
         }
 
-        .economy > img {
-            border: 1px solid #112;
-            border-radius: .3em;
+        div > img {
+            object-fit: contain;
+            width: 50%;
+            height: 100%;
         }
 
-        .economy:hover {
+        .economy > img {
+            border-radius: .3em;
             transform: scale(1.0099);
             cursor: pointer;
+            box-shadow: -5px 5px 10px #112;
             transition: .5s;
         }
 
-        .box1 {
+        .box1 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(20em, 1fr));
         }
 
-        .box2 {
+        .box2 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
         }
 
-        .box3 {
+        .box3 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
         }
 
-        .box4 {
+        .box4 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
         }
 
-        .box5 {
+        .box5 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
         }
 
-        .box6 {
+        .box6 > img {
             grid: auto-flow 16em/repeat(auto-fit, minmax(26em, 1fr));
         }
     </style>
