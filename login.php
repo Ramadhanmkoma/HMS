@@ -6,35 +6,47 @@ $db_pass = '12345';
 $dbName = 'rior_hms';
 
 $conn = mysqli_connect($service, $db_username, $db_pass, $dbName);
-
+$username = '';
+$password = '';
+$error = '';
 //Check for Connection\
 if (mysqli_connect_errno()) {
   # code...
-  echo 'Connection Failed '. mysqli_connect_errno();
+  echo 'Connection Failed ' . mysqli_connect_errno();
 }
 
 if ($conn) {
-  # code...
-  $sql = "SELECT username, email, pwd FROM reg_users WHERE username = '$username' AND pwd = '$password'";
-  $result = $conn->query($sql);
+  #$result = $conn->query($sql);
+  if (isset($_POST['submit'])) {
 
+    if (isset($_POST['name']) && isset($_POST['password'])) {
+      # code...
+      
+      $username = $_POST['name'];
+      $password = $_POST['password'];
+      //Encrypting the password
+      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-}
+      $sql = "SELECT username, email, pwd FROM reg_users WHERE username = '$username' AND pwd = '$password'";
+      $result = mysqli_query($conn, $sql);
+      $count = mysqli_num_rows($result);
+      if ($count > 0) {
+        # code...
+        $success = "Login Successfully";
 
-if (isset($_POST['submit'])) {
+        #starting a session
+        session_start();
 
-  if (isset($_POST['name']) && isset($_POST['password'])) {
-    # code...
-    
-  session_start();
+        $_SESSION['name'] = htmlentities($_POST['name']);
+        $_SESSION['password'] = htmlentities($_POST['password']);
 
-  $_SESSION['name'] = htmlentities($_POST['name']);
-  $_SESSION['password'] = htmlentities($_POST['password']);
+        header('Location: Dashboard.php');
+      } else {
+
+        $error = "Incorrect Username or Password";
+      }
+    }
   }
-
-  #echo $_SESSION['name'];
-
-  header('Location: Dashboard.php');
 }
 
 ?>
@@ -72,9 +84,17 @@ if (isset($_POST['submit'])) {
       <h3 class="sub-head">Tenant Login Portal</h3>
     </div>
 
+    <style>
+      .error {
+        color: #F66;
+        font-weight: 600;
+      }
+    </style>
+
     <div class="login-div">
       <center>
         <form action="" method="post">
+          <p class="error"><?php echo $error; ?></p>
           <label for="Username">Username/Email: </label>
           <input type="text" id="name" class="UserInfo" placeholder="Enter your Username here..." name="name" required />
 

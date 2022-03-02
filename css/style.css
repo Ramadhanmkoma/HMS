@@ -269,15 +269,15 @@ div.box3 {
 }
 
 .form1 {
-    display: flex;
+    display: none;
 }
 
 .form2#form2 {
-    /* display: none; */
+    display: none;
 }
 
 .form3#form3 {
-    /* display: none; */
+    display: none;
 }
 
 

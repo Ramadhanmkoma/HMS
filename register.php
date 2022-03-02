@@ -85,6 +85,19 @@ if (isset($_POST['submit'])) {
   fieldset {
     border: 1px solid #CCC;
     border-radius: .2em;
+    color: #FFF;
+  }
+
+  label {
+    color: white;
+  }
+
+  .navbar > .navbar-brand, .nav-link {
+    color: #CCC !important;
+  }
+
+  .form-control {
+    color: #CCC !important;
   }
 
   @media screen and (max-width: 700px) {
@@ -96,7 +109,7 @@ if (isset($_POST['submit'])) {
 
 <body>
 <div class="main">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <a class="navbar-brand" href="#"><i class="fas"></i> HMS </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -126,60 +139,60 @@ if (isset($_POST['submit'])) {
     </div>
     <div class="container login-div" style="width: 50%;">
 
-      <form action="./dbConfig/conn.php" method="POST" class="form-control">
+      <form action="./dbConfig/conn.php" method="POST" class="form-control bg-dark">
         <label for="Firstname">First Name: </label>
-        <input type="text" id="name" class="form-control UserInfo" placeholder="Enter your First name here..." name="firstName" value="<?php 
+        <input type="text" id="name" class="form-control UserInfo bg-dark" placeholder="Enter your First name here..." name="firstName" value="<?php 
         echo htmlspecialchars($firstName, ENT_QUOTES);
         ?>" required />
 
         <label for="Lastname">Last Name: </label>
-        <input type="text" id="last-name" class="form-control UserInfo" placeholder="Enter your Last name here..." name="lastName" value="<?php 
+        <input type="text" id="last-name" class="form-control UserInfo bg-dark" placeholder="Enter your Last name here..." name="lastName" value="<?php 
         echo htmlspecialchars($lastName, ENT_QUOTES);
         ?>" required />
 
         <label for="Username">Username: </label>
-        <input type="text" id="username" class="form-control UserInfo" placeholder="Enter your Username here..." name="username" value="<?php 
+        <input type="text" id="username" class="form-control UserInfo bg-dark" placeholder="Enter your Username here..." name="username" value="<?php 
         echo htmlspecialchars($username, ENT_QUOTES);
         ?>" required />
 
         <label for="Email">Email: </label>
-        <input type="email" id="email" class="form-control UserInfo" placeholder="name@example.com" name="email" value="<?php 
+        <input type="email" id="email" class="form-control UserInfo bg-dark" placeholder="name@example.com" name="email" value="<?php 
         echo htmlspecialchars($email, ENT_QUOTES);
         ?>" required />
 
         <label for="Date">Date Of Birth: </label>
-        <input type="date" id="date" class="form-control UserInfo" placeholder="Enter your Last name here..." max="2009-01-01" name="dob" required />
+        <input type="date" id="date" class="form-control UserInfo bg-dark" placeholder="Enter your Last name here..." max="2009-01-01" name="dob" required />
 
 
         <label for="Email">Role: </label>
-        <select class="form-control" name="userrole" required />
-        <option value="4" selected>Tenant</option>
-        <option value="1" disabled>Database Administrator</option>
-        <option value="2" disabled>Manager</option>
-        <option value="3" disabled>Cashier</option>
-        <option value="4" disabled>House Keeper</option>
+        <select class="form-control bg-dark" name="userrole" required />
+          <option value="4" class="bg-dark" selected>Tenant</option>
+          <option value="1" class="bg-dark" disabled>Database Administrator</option>
+          <option value="2" class="bg-dark" disabled>Manager</option>
+          <option value="3" class="bg-dark" disabled>Cashier</option>
+          <option value="4" class="bg-dark" disabled>House Keeper</option>
         </select>
 
         <label for="Password">Password: </label>
-        <input type="password" id="pass" class="form-control password" name="password" placeholder="Enter new password..." required />
+        <input type="password" id="pass" class="form-control password bg-dark" name="password" placeholder="Enter new password..." required />
 
         <label for="Password">Re-type Password: 
           <?php if (isset($_POST['password']) !== isset($_POST['re_password'])): ?> 
             <font color="red"> Password Do not Match! </font>
           <?php endif ?>
         </label>
-        <input type="password" id="re-pass" class="form-control password" name="re_password" placeholder="Re-type password..." required />
+        <input type="password" id="re-pass" class="form-control password bg-dark" name="re_password" placeholder="Re-type password..." required />
 
         <label for="Phone">Phone number: </label>
-        <input type="tel" id="phone" class="form-control UserInfo" placeholder="eg: 255754XXXXXX" name="number" maxlength="12" minlength="10" pattern="[0-9]{12}" required />
+        <input type="tel" id="phone" class="form-control UserInfo bg-dark" placeholder="eg: 255754XXXXXX" name="number" maxlength="12" minlength="10" pattern="[0-9]{12}" required />
 
         <br>
         <fieldset>
           <legend>Gender</legend>
           <label for="Male" id="gender" name="gender">Male:
-            <input type="radio" id="name" name="gender" value="M" checked />
+            <input type="radio" class="radio" id="name" name="gender" value="M" checked />
           </label>
-          <label for="Female" id="gender" name="gender">Female:
+          <label for="Female" id="gender" class="radio" name="gender">Female:
             <input type="radio" id="gender" name="gender" value="F" />
           </label>
         </fieldset>

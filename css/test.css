@@ -36,7 +36,7 @@ body {
 
 .navbar#navbar {
     border: 1px solid black;
-    box-shadow: 0 5px 5px #112;
+    box-shadow: 0 0 5px #222;
     grid-area: 1/1/2/3;
     /* margin: 2rem auto; */
     height: 50px;
@@ -178,7 +178,7 @@ section.btn-sec-apply > a > button:hover {
 .li-link {
     display: inline-block;
     margin: 1em auto;
-    padding: 2rem auto;
+    padding: 7rem auto;
 }
 
 
@@ -189,7 +189,7 @@ section.btn-sec-apply > a > button:hover {
     background-color: transparent;
     margin: 2rem 2rem;
     padding: 7rem 0;
-    color: #f66;
+    color: #112;
     font-weight: 600;
 }
 

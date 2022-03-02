@@ -1,16 +1,15 @@
-
 <?php
-    session_start();
-    #print_r($_SESSION);
-    $name = $_SESSION['name'];
-    #$password = $_SESSION['password'];
-    
+session_start();
+#print_r($_SESSION);
+$name = $_SESSION['name'];
+#$password = $_SESSION['password'];
 
-    $hostel = 122;
-    $room = 1326;
-    $roomLeft = 0;
-    $payment = 00.00;
- ?>
+
+$hostel = 122;
+$room = 1326;
+$roomLeft = 0;
+$payment = 00.00;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HMS | Dashboard</title>
     <link rel="stylesheet" href="./css/test.css">
     <link rel="stylesheet" href="./fontawesome/css/all.css">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
@@ -45,6 +44,7 @@
             </ul>
 
     </nav>
+   
 
     <main class="main">
         <div class="box" id="box1">
@@ -69,7 +69,7 @@
             <p>User Info</p>
             <hr style="width: 95%; margin: 0 auto; border: 1px solid #EEE; box-shadow: 0 0 20px #EEE;">
             <i class="fas fa-address-book"></i>
-            Username: <label for="User-Info" name="user-info"> 
+            Username: <label for="User-Info" name="user-info">
                 <?php echo $name; ?> </label>
         </div>
         <div class="box" id="box5">
@@ -87,12 +87,12 @@
 
     </main>
 
-        <section class="btn-sec-apply">
-          <p>Need a room?</p>
-          <a href="./Application.php"> <button type="button" name="button"> Apply Now </button></a>
+    <section class="btn-sec-apply">
+        <p>Need a room?</p>
+        <a href="./Application.php"> <button type="button" name="button"> Apply Now </button></a>
 
-          <a href="./index.html"> <button type="button" name="button" style="margin: 1em 0; border-color: #F66; color: #EEE; background-color: #F66; box-shadow: 0px 4px 15px #F66;"> Sign Out </button></a>
-        </section>
+        <a href="./index.html"> <button type="button" name="button" style="margin: 1em 0; border-color: #F66; color: #EEE; background-color: #F66; box-shadow: 0px 4px 15px #F66;"> Sign Out </button></a>
+    </section>
 
     <!-- <footer class="footer">
         footer
