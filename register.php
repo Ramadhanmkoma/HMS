@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
   } else {
     $firstName = htmlspecialchars($_POST['firstName'], ENT_QUOTES);
     $fName = $_SESSION['firstName'];
-  }
+  };
 
   if (!isset($_POST['lastName']) || $_POST['lastName'] === '') {
     # code...
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
   } else {
     $lastName = htmlspecialchars($_POST['lastName'], ENT_QUOTES);
     $lName = $_SESSION['lastName'];
-  }
+  };
 
   if (!isset($_POST['username']) || $_POST['username'] === '') {
     # code...
@@ -39,11 +39,21 @@ if (isset($_POST['submit'])) {
   } else {
     # code...
     $username = htmlspecialchars($_POST['username'], ENT_QUOTES);
-  }
+    $uname = $_SESSION['username'];
+  };
 
-  if ($ok) {
+  if (!isset($_POST['email']) || $_POST['email'] === '') {
     # code...
+    $ok = false;
+  } else {
+    # code...
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+    $em = $_SESSION['email'];
+  };
 
+  if ($ok === true) {
+    # code...
+    header("Location: http://localhost/hms/dbConfig/conn.php");
   }
 
 
@@ -97,7 +107,7 @@ if (isset($_POST['submit'])) {
         <a href="./index.html" class="nav-link"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a href="./register.php" class="nav-link"> <i class="fas fa-handshake"></i> Sign Up</a>
+        <a href="./login.php" class="nav-link"> <i class="fas fa-handshake"></i> Sign In</a>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">Help <i class="fas fa-question"></i> </a>
@@ -118,16 +128,24 @@ if (isset($_POST['submit'])) {
 
       <form action="./dbConfig/conn.php" method="POST" class="form-control">
         <label for="Firstname">First Name: </label>
-        <input type="text" id="name" class="form-control UserInfo" placeholder="Enter your First name here..." name="firstName" required />
+        <input type="text" id="name" class="form-control UserInfo" placeholder="Enter your First name here..." name="firstName" value="<?php 
+        echo htmlspecialchars($firstName, ENT_QUOTES);
+        ?>" required />
 
         <label for="Lastname">Last Name: </label>
-        <input type="text" id="last-name" class="form-control UserInfo" placeholder="Enter your Last name here..." name="lastName" required />
+        <input type="text" id="last-name" class="form-control UserInfo" placeholder="Enter your Last name here..." name="lastName" value="<?php 
+        echo htmlspecialchars($lastName, ENT_QUOTES);
+        ?>" required />
 
         <label for="Username">Username: </label>
-        <input type="text" id="username" class="form-control UserInfo" placeholder="Enter your Username here..." name="username" required />
+        <input type="text" id="username" class="form-control UserInfo" placeholder="Enter your Username here..." name="username" value="<?php 
+        echo htmlspecialchars($username, ENT_QUOTES);
+        ?>" required />
 
         <label for="Email">Email: </label>
-        <input type="email" id="email" class="form-control UserInfo" placeholder="name@example.com" name="email" required />
+        <input type="email" id="email" class="form-control UserInfo" placeholder="name@example.com" name="email" value="<?php 
+        echo htmlspecialchars($email, ENT_QUOTES);
+        ?>" required />
 
         <label for="Date">Date Of Birth: </label>
         <input type="date" id="date" class="form-control UserInfo" placeholder="Enter your Last name here..." max="2009-01-01" name="dob" required />
@@ -145,7 +163,11 @@ if (isset($_POST['submit'])) {
         <label for="Password">Password: </label>
         <input type="password" id="pass" class="form-control password" name="password" placeholder="Enter new password..." required />
 
-        <label for="Password">Re-type Password: </label>
+        <label for="Password">Re-type Password: 
+          <?php if (isset($_POST['password']) !== isset($_POST['re_password'])): ?> 
+            <font color="red"> Password Do not Match! </font>
+          <?php endif ?>
+        </label>
         <input type="password" id="re-pass" class="form-control password" name="re_password" placeholder="Re-type password..." required />
 
         <label for="Phone">Phone number: </label>
@@ -171,7 +193,7 @@ if (isset($_POST['submit'])) {
 
     </div>
     <br><br>
-    <h5 class="account-reg" style="text-align: center;">Have an account? <a href="./login.html"> Login here</a></h4><br><br>
+    <h5 class="account-reg" style="text-align: center;">Have an account? <a href="./login.php"> Login here</a></h4><br><br>
   </div>
 
 

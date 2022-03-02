@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
       <nav class="nav nav-bar">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="./register.php">Sign Up</a></li>
+          <li><a href="./login.php">Sign In</a></li>
           <li><a href="#">Help</a></li>
         </ul>
       </nav>
@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
 
     </div>
     <br><br>
-    <h5 class="account-reg" style="text-align: center;">Have an account? <a href="./login.html"> Login here</a></h4><br><br>
+    <h5 class="account-reg" style="text-align: center;">Have an account? <a href="./login.php"> Login here</a></h4><br><br>
   </div>
 
   <script>

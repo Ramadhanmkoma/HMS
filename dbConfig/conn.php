@@ -8,6 +8,7 @@
     $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
     $number = htmlspecialchars($_POST['number'], ENT_QUOTES);
     $gender = htmlspecialchars($_POST['gender'], ENT_QUOTES);
+    $roleid = htmlspecialchars($_POST['userrole'], ENT_QUOTES);
     $re_password =htmlspecialchars( $_POST['re_password'], ENT_QUOTES);
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);

@@ -1,5 +1,11 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '12345', 'rior_hms');
+// Creating Database Connection 
+$service = 'localhost';
+$db_username = 'root';
+$db_pass = '12345';
+$dbName = 'rior_hms';
+
+$conn = mysqli_connect($service, $db_username, $db_pass, $dbName);
 
 //Check for Connection\
 if (mysqli_connect_errno()) {
@@ -9,8 +15,10 @@ if (mysqli_connect_errno()) {
 
 if ($conn) {
   # code...
-  $sql = "SELECT username, email, pwd FROM reg_users";
+  $sql = "SELECT username, email, pwd FROM reg_users WHERE username = '$username' AND pwd = '$password'";
   $result = $conn->query($sql);
+
+
 }
 
 if (isset($_POST['submit'])) {
@@ -25,7 +33,7 @@ if (isset($_POST['submit'])) {
   }
 
   #echo $_SESSION['name'];
-  
+
   header('Location: Dashboard.php');
 }
 
@@ -63,6 +71,7 @@ if (isset($_POST['submit'])) {
 
       <h3 class="sub-head">Tenant Login Portal</h3>
     </div>
+
     <div class="login-div">
       <center>
         <form action="" method="post">
@@ -78,8 +87,9 @@ if (isset($_POST['submit'])) {
         <h5 class="account-reg">Are you a staff? <a href="./Admin/login.html"> Login here </a></h4>
       </center>
     </div>
-    <h5 class="account-reg">Don't Have an account? <a href="./register.html"> Register here</a></h4>
+    <h5 class="account-reg">Don't Have an account?<a href="./register.html"> Register here</a></h4>
   </div>
+
 </body>
 
 </html>
