@@ -27,25 +27,30 @@
         a[name="Application"] {
             color: #39F !important;
         }
+
+        button > a, p > a {
+            text-decoration: none;
+            color: #CCC;
+        }
     </style>
 
     <section class="section" id="section">
         <div class="box1" id="box">
             <p><i class="fas fa-bed"></i> SPECIAL CLASS (ROOM)</p>
-            <p class="box-info">Apply Here</p>
-            <button type="submit" class="apply special" id="special" name="special">Apply</button>
+            <p class="box-info"><a href="http://localhost/hms/rooms/Special/Special.php">Apply Here</a></p>
+            <button type="submit" class="apply special" id="special" name="special"><a href="http://localhost/hms/rooms/Special/Special.php">Apply</a></button>
         </div>
 
-        <div class="box2" id="box" onclick="toggle();">
+        <div class="box2" id="box">
             <p><i class="fas fa-bed"></i> ECONOMY CLASS (ROOM)</p>
-            <p class="box-info">Apply Here</p>
-            <button type="button" class="apply economy" id="economy" onclick="toggleMenu2()" name="economy">Apply</button>
+            <p class="box-info"><a href="http://localhost/hms/rooms/Economy/Economy.php">Apply Here</a></p>
+            <button type="button" class="apply economy" id="economy" name="economy"><a href="http://localhost/hms/rooms/Economy/Economy.php">Apply</a></button>
         </div>
 
         <div class="box3" id="box">
             <p><i class="fas fa-bed"></i> BUSINESS CLASS (ROOM)</p>
-            <p class="box-info">Apply Here</p>
-            <button type="button" class="apply business" id="business" onclick="toggleMenu3()" name="business">Apply</button>
+            <p class="box-info"><a href="http://localhost/hms/rooms/Business/Business.php">Apply Here</a></p>
+            <button type="button" class="apply business" id="business" name="business"><a href="http://localhost/hms/rooms/Business/Business.php">Apply</a></button>
         </div>
     </section>
 
@@ -53,9 +58,8 @@
 
         <!-- Start SPECIAL CLASS -->
 
-        <?php if (isset($_REQUEST['special'])) : ?>
 
-        <div class="bg-modal form1" id="form1">
+        <!-- <div class="bg-modal form1" id="form1">
             <div class="modal-content">
 
                 <div class="close-btn">+</div>
@@ -106,12 +110,12 @@
                     </fieldset>
                 </form>
             </div>
-        </div>
-        <?php endif ?>
+        </div> -->
+
 
         <!-- End SPECIAL CLASS -->
 
-        <!-- Start ECONOMY CLASSs -->
+        <!-- Start ECONOMY CLASSs
         <div class="bg-modal form2" id="form2">
             <div class="modal-content">
                 <div class="close-btn" onclick="toggleMenu()">+</div>
@@ -162,14 +166,14 @@
                     </fieldset>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- End ECONOMY Clss -->
 
 
         <!-- Start BUSINESS CLASS -->
 
-        <div class="bg-modal form3" id="form3">
+        <!-- <div class="bg-modal form3" id="form3">
             <div class="modal-content">
                 <form action="#" method="post">
                     <fieldset>
@@ -217,7 +221,7 @@
                     </fieldset>
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <!-- End BUSINESS CLASS -->
     </main>

@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
 }
 
 if ($conn) {
-  #$result = $conn->query($sql);
+  
   if (isset($_POST['submit'])) {
 
     if (isset($_POST['name']) && isset($_POST['password'])) {

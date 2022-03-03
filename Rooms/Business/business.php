@@ -25,12 +25,36 @@
         }
 
         body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             display: grid;
         }
 
         .li-link > a[name="Application"] {
             color: #66F !important;
         }
+
+        a {
+            margin: 0 auto;
+        }
+
+        a > button {
+            cursor: pointer;
+            background-color: #66F;
+            border-style: none;
+            border-radius: .3em;
+            margin: 1em auto;
+            padding: .2em .7em;
+            color: #FFF;
+            box-shadow: -3px 3px 6px #33C;
+            /* width: 85%; */
+        }
+
+        div > img {
+            object-fit: contain;
+            width: 50%;
+            height: 100%;
+        }
+
 
         div.buscont {
             display: -ms-grid;
@@ -45,10 +69,13 @@
 
         .business > img {
             /* border: 1px solid #112; */
-            transform: scale(1.0099);
+            transform: scale(1.01);
             border-radius: .3em;
             box-shadow: -5px 5px 10px #112;
             cursor: pointer;
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
         }
 
         .box1 > img {
@@ -95,15 +122,15 @@
         <button class="sign-out"><a href="./index.html">Sign Out <i class="fas fa-sign-out"></i></a></button>
     </nav>
 
-    <button class="sign-out back"><a href="http://localhost/hms/Application.php">Go to Previous Page <i class="fas fa-sign-out"></i></a></button>
+    <!-- <button class="sign-out back"><a href="http://localhost/hms/Application.php">Go to Previous Page <i class="fas fa-sign-out"></i></a></button> -->
 
     <div class="buscont" id="buscont">
-        <div class="business" id="business"></div>
-        <div class="business" id="business"></div>
-        <div class="business" id="business"></div>
-        <div class="business" id="business"></div>
-        <div class="business" id="business"></div>
-        <div class="business" id="business"></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/101homebackpackershostelvalencia.jpg" alt="Room1" srcset=""><a href="./business.php"><button>Order now</button></a></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/DSCF0255.jpg" alt="Room2" srcset=""><a href="#"><button>Order now</button></a></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/Hostel-room.jpeg" alt="Room3" srcset=""><a href="#"><button>Order now</button></a></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/hostel-room-types-5.jpg" alt="Room4" srcset=""><a href="#"><button>Order now</button></a></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/hostel-rooms-ana.jpg" alt="Room5" srcset=""><a href="#"><button>Order now</button></a></div>
+        <div class="business" id="business"><img src="http://localhost/hms/assets/Business/vijayam-ladies-hostel-rajah-serfoji-government-college-thanjavur-hostels-for-women-8zpws.jpg" alt="Room6" srcset=""><a href="#"><button>Order now</button></a></div>
     </div>
 </body>
 

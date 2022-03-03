@@ -19,7 +19,7 @@
     if ($conn) {
         # code...
         
-        $query = "INSERT INTO reg_users (firstName, lastName, username, email, dob, pwd, number, gender) VALUES ('$firstName', '$lastName', '$username', '$email', '$dob', '$hashed_password', '$number', '$gender')";
+        $query = "INSERT INTO reg_users (firstName, lastName, username, email, dob, pwd, number, gender) VALUES ('$firstName', '$lastName', '$username', '$email', '$dob', '$password', '$number', '$gender')";
 
         $result = $conn->query($query);
         
